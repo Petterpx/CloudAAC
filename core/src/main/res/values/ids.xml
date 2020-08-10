@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="vpMain" type="id" />
+    <item name="llMain" type="id" />
+</resources>
