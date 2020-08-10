@@ -18,12 +18,12 @@ allprojects {
 
 ```groovy
 //不包含DataBinding的扩展，即默认的ViewModel实现手动绑定
-implementation 'com.github.Petterpx:CloudMVVM:core:1.0.1' 
+implementation 'com.github.Petterpx:CloudMVVM:core:1.0.2' 
 ```
 
 ```groovy
 //包含DataBinding的扩展
-implementation 'com.github.Petterpx:CloudMVVM:databing_core:1.0.1'
+implementation 'com.github.Petterpx:CloudMVVM:databing_core:1.0.2'
 ```
 
 很多开发者可能不习惯使用 **DataBinding**, 那么依赖 **core** 即可。 如果你习惯使用 **DataBinding**，那么直接依赖 **databing_core** 即可，内部已经包含了对于 **DataBinding** 的单独处理。
