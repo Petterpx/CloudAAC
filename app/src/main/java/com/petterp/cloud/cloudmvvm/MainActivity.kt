@@ -13,7 +13,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, TestDataBingActivity::class.java))
         }
         btnVm.setOnClickListener {
-            startActivity(Intent(this, TestVmActivity::class.java))
+            startActivity(Intent(this, TestVMActivity::class.java))
         }
 
         btnTab.setOnClickListener {

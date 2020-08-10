@@ -2,7 +2,7 @@ package com.petterp.cloud.cloudmvvm
 
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import com.petterp.bullet.core.base.BaseVmActivity
+import com.petterp.bullet.core.base.BaseVMActivity
 import kotlinx.android.synthetic.main.activity_test.*
 
 /**
@@ -11,7 +11,7 @@ import kotlinx.android.synthetic.main.activity_test.*
  * @Email ShiyihuiCloud@163.com
  * @Function
  */
-class TestVmActivity : BaseVmActivity() {
+class TestVMActivity : BaseVMActivity() {
 
     val testViewModel by viewModels<TestViewModel>()
 

@@ -33,9 +33,4 @@ class TestTabActivity : BaseTabActivity() {
             80f
         )
     }
-
-    override fun isViewPagerScroll(): Boolean {
-        return true
-    }
-
 }

@@ -30,6 +30,6 @@
 -keep public class * extends com.petterp.bullet.core.base.basic.BaseActivity { *; }
 -keep public class * extends com.petterp.bullet.core.base.basic.BaseFragment { *; }
 -keep public class * extends com.petterp.bullet.core.base.BaseTabActivity { *; }
--keep public class * extends com.petterp.bullet.core.base.BaseVmActivity { *; }
+-keep public class * extends com.petterp.bullet.core.base.BaseVMActivity { *; }
 -keep public class * extends com.petterp.bullet.core.base.BaseVMFragment { *; }
 -keep public class * extends com.petterp.bullet.core.base.BasePagerAdapter { *; }

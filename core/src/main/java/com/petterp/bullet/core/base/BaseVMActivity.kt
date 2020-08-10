@@ -10,7 +10,7 @@ import com.petterp.bullet.core.base.basic.BaseActivity
  * @Email ShiyihuiCloud@163.com
  * @Function
  */
-abstract class BaseVmActivity : BaseActivity() {
+abstract class BaseVMActivity : BaseActivity() {
 
     abstract fun layoutId(): Any
 

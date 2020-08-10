@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".TestDataBingActivity" />
-        <activity android:name=".TestVmActivity" />
+        <activity android:name=".TestVMActivity" />
         <activity android:name=".TestTabActivity" />
     </application>
 
