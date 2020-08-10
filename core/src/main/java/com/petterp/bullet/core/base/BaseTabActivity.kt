@@ -1,6 +1,7 @@
 package com.petterp.bullet.core.base
 
 import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -14,7 +15,6 @@ import androidx.appcompat.widget.AppCompatTextView
 import androidx.appcompat.widget.LinearLayoutCompat
 import androidx.fragment.app.Fragment
 import androidx.viewpager.widget.ViewPager
-import com.bullet.ktx.ui.dip2px
 import com.petterp.bullet.core.R
 import com.petterp.bullet.core.base.basic.BaseActivity
 import com.petterp.bullet.core.custom.NoScrollViewPager
@@ -209,7 +209,7 @@ abstract class BaseTabActivity : BaseActivity() {
                 if (i == defaultPosition) {
                     itemIcon.setImageResource(mBottomImages[i].first)
                     itemTitle.setTextColor(mBottomTextColors.first)
-                    itemTitle.textSize= mBottomTextSizes.first
+                    itemTitle.textSize = mBottomTextSizes.first
                 }
                 //添加到布局中
                 bottomItem.addView(view)
@@ -244,5 +244,22 @@ abstract class BaseTabActivity : BaseActivity() {
         itemTitle.textSize = mBottomRes.mBottomTextSizes.first
         currentPosition = position
         viewPager.setCurrentItem(position, isViewPagerScroll())
+    }
+
+    /**
+     * dp转px
+     */
+    private fun Context.dip2px(dpValue: Float): Int {
+        val scale: Float = resources.displayMetrics.density
+        return (dpValue * scale + 0.5f).toInt()
+    }
+
+
+    /**
+     * px转dp
+     */
+    private fun Context.px2dip(pxValue: Float): Int {
+        val scale = resources.displayMetrics.density
+        return (pxValue / scale + 0.5f).toInt()
     }
 }

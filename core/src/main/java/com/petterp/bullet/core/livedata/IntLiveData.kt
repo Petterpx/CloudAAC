@@ -1,5 +1,7 @@
 package com.petterp.bullet.core.livedata
 
+import androidx.lifecycle.MutableLiveData
+
 
 /**
  * @Author petterp
@@ -7,7 +9,7 @@ package com.petterp.bullet.core.livedata
  * @Email ShiyihuiCloud@163.com
  * @Function
  */
-class IntLiveData(value: Int = 0) : MutableLiveDataKtx<Int>(value) {
+class IntLiveData(value: Int = 0) : MutableLiveData<Int>(value) {
     override fun getValue(): Int {
         return super.getValue()!!
     }

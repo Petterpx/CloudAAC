@@ -16,6 +16,14 @@
         android:onClick="@{()->vm.sumAdd()}">
 
         <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="点击屏幕触发数字相加\n DataBing-Activity"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
             android:id="@+id/tvSum"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

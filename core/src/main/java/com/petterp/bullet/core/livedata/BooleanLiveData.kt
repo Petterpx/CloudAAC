@@ -1,5 +1,7 @@
 package com.petterp.bullet.core.livedata
 
+import androidx.lifecycle.MutableLiveData
+
 
 /**
  * @Author petterp
@@ -7,7 +9,7 @@ package com.petterp.bullet.core.livedata
  * @Email ShiyihuiCloud@163.com
  * @Function 自定义BooleanLiveData
  */
-class BooleanLiveData(value: Boolean = false) : MutableLiveDataKtx<Boolean>(value) {
+class BooleanLiveData(value: Boolean = false) : MutableLiveData<Boolean>(value) {
     override fun getValue(): Boolean {
         return super.getValue()!!
     }
