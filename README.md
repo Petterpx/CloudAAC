@@ -30,13 +30,15 @@ implementation 'com.github.Petterpx:CloudMVVM:databing_core:1.0.1'
 
 
 
+<br/>
+
 ## 相关核心类的介绍
 
 #### BaseVMActivity && BaseVMFragment
 
 适用于ViewModel 的通用Activity.具体使用详见使用demo.
 
-
+<br/>
 
 #### BaseTabActivity
 
@@ -74,13 +76,13 @@ class TestTabActivity : BaseTabActivity() {
 }
 ```
 
-
+<br/>
 
 #### BasePagerAdapter
 
 通用的一个PagerAdapter 适用于少量 Fragment,内部配合 **behavior** 已完成懒加载处理。
 
-
+<br/>
 
 #### BaseDataBingActivity && BaseDataBingFragment
 
@@ -88,7 +90,11 @@ class TestTabActivity : BaseTabActivity() {
 
 > 注意 **binding** 变量 请谨慎使用，非必要场景下，**务必禁止使用，避免造成视图不一致的问题。**
 
+<br/>
 
+<br/>
+
+<br/>
 
 具体使用请参见Demo中的案例,如果在使用中有任何问题，欢迎提 issues,或者联系我的邮箱 ShiyihuiCloud@163.com
 
