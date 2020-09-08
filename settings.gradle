@@ -1,4 +1,6 @@
-include ':databing_core'
+include ':tab_ktx'
+include ':viewbing_ktx'
+include ':databing_ktx'
 include ':core'
 include ':app'
 rootProject.name = "CloudMVVM"

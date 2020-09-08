@@ -21,15 +21,15 @@
 #-renamesourcefileattribute SourceFile
 
 # 不混淆core下的所有类
--keep  class com.petterp.bullet.core.base.** { *; }
+-keep  class com.cloud.mvvm.core.base.** { *; }
 
--keep public class  com.petterp.bullet.core.base.BottomBean { *; }
+-keep public class  com.cloud.mvvm.tab.BottomBean { *; }
 
 
 # 不混淆指定的其子类
--keep public class * extends com.petterp.bullet.core.base.basic.BaseActivity { *; }
--keep public class * extends com.petterp.bullet.core.base.basic.BaseFragment { *; }
--keep public class * extends com.petterp.bullet.core.base.BaseTabActivity { *; }
--keep public class * extends com.petterp.bullet.core.base.BaseVMActivity { *; }
--keep public class * extends com.petterp.bullet.core.base.BaseVMFragment { *; }
--keep public class * extends com.petterp.bullet.core.base.BasePagerAdapter { *; }
+-keep public class * extends com.cloud.mvvm.core.base.BaseActivity { *; }
+-keep public class * extends com.cloud.mvvm.core.base.BaseFragment { *; }
+-keep public class * extends com.cloud.mvvm.tab.BaseTabActivity { *; }
+-keep public class * extends com.cloud.mvvm.core.base.BaseVMActivity { *; }
+-keep public class * extends com.cloud.mvvm.core.base.BaseVMFragment { *; }
+-keep public class * extends com.cloud.mvvm.tab.BasePagerAdapter { *; }

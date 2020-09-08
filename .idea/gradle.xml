@@ -13,7 +13,9 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/databing_core" />
+            <option value="$PROJECT_DIR$/databing_ktx" />
+            <option value="$PROJECT_DIR$/tab_ktx" />
+            <option value="$PROJECT_DIR$/viewbing_ktx" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />
