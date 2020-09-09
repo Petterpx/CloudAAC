@@ -7,7 +7,7 @@
 
         <variable
             name="vm"
-            type="com.cloud.mvvm.test.vm.TestViewModel" />
+            type="com.cloud.aac.test.vm.TestViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

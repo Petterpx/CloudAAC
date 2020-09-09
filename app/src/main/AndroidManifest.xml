@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.cloud.mvvm.test">
+    package="com.cloud.aac.test">
 
     <application
         android:allowBackup="true"
@@ -9,17 +9,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.NoActionBar">
-        <activity android:name="com.cloud.mvvm.test.MainActivity">
+        <activity android:name="com.cloud.aac.test.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.cloud.mvvm.test.databing_ktx.TestDataBingActivity" />
-        <activity android:name="com.cloud.mvvm.test.core.TestVMActivity" />
-        <activity android:name="com.cloud.mvvm.test.tab_ktx.TestTabActivity" />
-        <activity android:name="com.cloud.mvvm.test.viewbing_ktx.TestViewBingActivity" />
+        <activity android:name="com.cloud.aac.test.databing_ktx.TestDataBingActivity" />
+        <activity android:name="com.cloud.aac.test.core.TestVMActivity" />
+        <activity android:name="com.cloud.aac.test.tab_ktx.TestTabActivity" />
+        <activity android:name="com.cloud.aac.test.viewbing_ktx.TestViewBingActivity" />
     </application>
 
 </manifest>

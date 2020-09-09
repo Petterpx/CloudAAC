@@ -21,15 +21,15 @@
 #-renamesourcefileattribute SourceFile
 
 # 不混淆core下的所有类
--keep  class com.cloud.mvvm.core.base.** { *; }
+-keep  class com.cloud.aac.core.base.** { *; }
 
--keep public class  com.cloud.mvvm.tab.BottomBean { *; }
+-keep public class  com.cloud.aac.tab.BottomBean { *; }
 
 
 # 不混淆指定的其子类
--keep public class * extends com.cloud.mvvm.core.base.BaseActivity { *; }
--keep public class * extends com.cloud.mvvm.core.base.BaseFragment { *; }
--keep public class * extends com.cloud.mvvm.tab.BaseTabActivity { *; }
--keep public class * extends com.cloud.mvvm.core.base.BaseVMActivity { *; }
--keep public class * extends com.cloud.mvvm.core.base.BaseVMFragment { *; }
--keep public class * extends com.cloud.mvvm.tab.BasePagerAdapter { *; }
+-keep public class * extends com.cloud.aac.core.base.BaseActivity { *; }
+-keep public class * extends com.cloud.aac.core.base.BaseFragment { *; }
+-keep public class * extends com.cloud.aac.tab.BaseTabActivity { *; }
+-keep public class * extends com.cloud.aac.core.base.BaseVMActivity { *; }
+-keep public class * extends com.cloud.aac.core.base.BaseVMFragment { *; }
+-keep public class * extends com.cloud.aac.tab.BasePagerAdapter { *; }

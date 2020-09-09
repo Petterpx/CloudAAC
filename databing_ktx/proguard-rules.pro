@@ -20,6 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep public class * extends com.cloud.mvvm.databing.BaseDataBingActivity { *; }
--keep public class * extends com.cloud.mvvm.databing.BaseDataBingFragment { *; }
--keep public class  com.cloud.mvvm.databing.DataBindingConfig { *; }
+-keep public class * extends com.cloud.aac.databing.BaseDataBingActivity { *; }
+-keep public class * extends com.cloud.aac.databing.BaseDataBingFragment { *; }
+-keep public class  com.cloud.aac.databing.DataBindingConfig { *; }
