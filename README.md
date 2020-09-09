@@ -6,7 +6,7 @@
 
 > ***什么样的框架适合你？什么样的框架也许都不适合你。***
 
-[![](https://jitpack.io/v/Petterpx/CloudMVVM.svg)](https://jitpack.io/#Petterpx/CloudMVVM)
+[![](https://jitpack.io/v/Petterpx/CloudAAC.svg)](https://jitpack.io/#Petterpx/CloudAAC)
 
 <br/>
 
@@ -31,7 +31,7 @@ allprojects {
 ```
 
 ```groovy
-implementation 'com.github.Petterpx:CloudAAC:core:1.0.3' 
+implementation 'com.github.Petterpx.CloudAAC:core:v1.0.3' 
 ```
 
 **CloudAAC已经导入了以下组件：**
@@ -51,24 +51,22 @@ implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
 
 <br/>
 
-<br/>
-
 ### **扩展支持**
 
 > core模块仅提供了核心的基础类，选择将主动改造权交给了大家，为了更好的便于使用，CloudAAC 支持扩展 以下模块。
 
 ```groovy
-implementation 'com.github.Petterpx:CloudAAC:databing_ktx:1.0.3' 
-implementation 'com.github.Petterpx:CloudAAC:viewbing_ktx:1.0.3' 
-implementation 'com.github.Petterpx:CloudAAC:tab_ktx:1.0.3' 
+implementation 'com.github.Petterpx.CloudAAC:databing_ktx:v1.0.3' 
+implementation 'com.github.Petterpx.CloudAAC:viewbing_ktx:v1.0.3' 
+implementation 'com.github.Petterpx.CloudAAC:tab_ktx:v1.0.3' 
 ```
 
-
+<br/>
 
 ### 核心类解释
 
 #### Core
-
+> 基础 **Base** 类。
 - BaseActivity  -------基础BaseActivity类
 - BaseFragment  -----基础BaseFragment类
 - ...其他相关工具
@@ -118,5 +116,6 @@ implementation 'com.github.Petterpx:CloudAAC:tab_ktx:1.0.3'
 <br/>
 
 **你知道的越多，你不知道的越多。并不提倡大家去频繁造轮子，但希望大家都能拥有去改造轮子的想法,CloudAAC 代码结构比较清晰，相关注释与边界已经注明，希望会对你会有所帮助，。**
+
 
 
