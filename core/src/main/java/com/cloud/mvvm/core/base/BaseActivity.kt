@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.cloud.mvvm.core.ktx.CloudConfig
 import com.cloud.mvvm.core.ktx.getAppViewModelProvider
-import com.cloud.mvvm.core.listener.IBarListener
+import com.cloud.mvvm.core.expand.IBarExpand
 
 /**
  * @Author petterp
@@ -14,7 +14,7 @@ import com.cloud.mvvm.core.listener.IBarListener
  * @Email ShiyihuiCloud@163.com
  * @Function 基础BaseActivity
  */
-abstract class BaseActivity : FragmentActivity(), IBarListener {
+abstract class BaseActivity : FragmentActivity(), IBarExpand {
 
     protected val HANDLER by lazy {
         CloudConfig.HANDLER

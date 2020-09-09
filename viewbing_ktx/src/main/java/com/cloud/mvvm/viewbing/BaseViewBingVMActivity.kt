@@ -12,7 +12,7 @@ import com.cloud.mvvm.core.ktx.createViewModel
  * @Email ShiyihuiCloud@163.com
  * @Function
  */
-abstract class BaseViewBingVMActivity<VB : ViewBinding, VM : BaseViewModel> : BaseActivity() {
+abstract class BaseViewBingVMActivity<VM : BaseViewModel, VB : ViewBinding> : BaseActivity() {
 
     protected val viewModel by lazy {
         createViewModel(this, this) as VM

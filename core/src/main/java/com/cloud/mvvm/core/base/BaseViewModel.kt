@@ -13,23 +13,27 @@ open class BaseViewModel : ViewModel {
     constructor() : super() {}
 
     constructor(state: SavedStateHandle) : super() {
-        savedStateHandle = state
+        _savedStateHandle = state
     }
 
     /** ViewModel在内存不足被干掉后的数据恢复  */
-    private var savedStateHandle: SavedStateHandle? = null
+    private var _savedStateHandle: SavedStateHandle? = null
+
+    val handle: SavedStateHandle
+        get() = _savedStateHandle!!
 
     /** 保存数据到saveStateHandle */
-    protected fun <T> saveCurrentValue(key: String, t: T) {
-        savedStateHandle?.set(key, t)
+    fun <T> setSave(key: String, t: T) {
+        handle.set(key, t)
     }
 
     /** 从saveStateHandle中取出数据 */
-    protected fun <T> getCurrentValue(key: String): T? {
-        return savedStateHandle?.get(key)
+    fun <T> getSave(key: String): T? {
+        return handle.get(key)
     }
 
     /** 获取指定saveStateHandle -key 的LiveData */
-    protected fun <T> getSaveStateLiveData(key: String): MutableLiveData<T>? =
-        savedStateHandle?.getLiveData(key)
+    fun <T> getSaveLiveData(key: String): MutableLiveData<T>? =
+        handle.getLiveData(key)
+
 }

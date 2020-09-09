@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.cloud.mvvm.core.ktx.CloudConfig
 import com.cloud.mvvm.core.ktx.getAppViewModelProvider
-import com.cloud.mvvm.core.listener.IBarListener
+import com.cloud.mvvm.core.expand.IBarExpand
 
 /**
  * @Author petterp
@@ -16,43 +16,41 @@ import com.cloud.mvvm.core.listener.IBarListener
  * @Email ShiyihuiCloud@163.com
  * @Function 基础BaseFragment,只包含相应的扩展方法
  */
-abstract class BaseFragment : Fragment(), IBarListener {
+abstract class BaseFragment : Fragment(), IBarExpand {
 
-    protected var rootView: View? = null
+    var rootView: View? = null
 
-    protected val mHandler by lazy { CloudConfig.HANDLER }
+    val mHandler by lazy { CloudConfig.HANDLER }
 
     /** 当前fragment是否已经加载过，用于viewpager中初始化相关*/
     @Volatile
     private var onVisible = false
 
     /** 首次执行onResume */
-    protected open fun initResume() {}
+    open fun initResume() {}
 
     /** onViewCreateView之后执行，用于初始化Fragment */
-    protected open fun initFragment() {}
+    open fun initFragment() {}
 
     /*** 可见 - 常用于viewPager中*/
-    protected open fun showData() {}
+    open fun showData() {}
 
     /*** 不可见 - 常用于viewPager中*/
-    protected open fun hideData() {}
+    open fun hideData() {}
 
     /** 获取共享状态下的ViewModel,常用与Fragment与Fragment的数据共享 */
     @SuppressLint("UseRequireInsteadOfGet")
-    protected inline fun <reified VM : ViewModel> getStateViewModel(): VM =
+    inline fun <reified VM : ViewModel> getStateViewModel(): VM =
         ViewModelProvider(requireActivity()).get(VM::class.java)
 
     /** 获取指定ViewModel */
-    protected inline fun <reified VM : ViewModel> getViewModel(): VM =
+    inline fun <reified VM : ViewModel> getViewModel(): VM =
         ViewModelProvider(this).get(VM::class.java)
 
-    /**  */
-    protected fun appViewModelProvider() =
-        getAppViewModelProvider(requireActivity().application)
+    /** 获取appViewModelProvider */
+    inline fun <reified VM : ViewModel> appViewModelProvider(): VM =
+        getAppViewModelProvider(requireActivity().application).get(VM::class.java)
 
-    fun test() {
-    }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

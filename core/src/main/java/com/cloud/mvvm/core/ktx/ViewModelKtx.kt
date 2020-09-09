@@ -1,10 +1,12 @@
 package com.cloud.mvvm.core.ktx
 
 import android.app.Application
+import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelStore
 import androidx.lifecycle.ViewModelStoreOwner
 import java.lang.reflect.ParameterizedType
+import kotlin.reflect.KClass
 
 /**
  * Created by Petterp
@@ -13,13 +15,10 @@ import java.lang.reflect.ParameterizedType
  */
 private var appViewModelProvider: ViewModelProvider? = null
 
-internal fun getAppViewModelProvider(application: Application): ViewModelProvider {
+fun getAppViewModelProvider(application: Application): ViewModelProvider {
     if (appViewModelProvider == null) {
         appViewModelProvider = ViewModelProvider(
-            ViewModelStoreOwner {
-                //这里暂时未处理，后期可以存放全局被销毁后所保存的数据
-                ViewModelStore()
-            },
+            ViewModelStore(),
             ViewModelProvider.AndroidViewModelFactory.getInstance(application)
         )
     }

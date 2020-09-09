@@ -1,4 +1,4 @@
-package com.cloud.mvvm.core.listener
+package com.cloud.mvvm.core.expand
 
 import android.app.Activity
 import androidx.fragment.app.Fragment
@@ -10,10 +10,10 @@ import com.gyf.immersionbar.ktx.immersionBar
  * @Author petterp
  * @Date 2020/9/8-11:01 AM
  * @Email ShiyihuiCloud@163.com
- * @Function 用于初始化 immersionBar
+ * @Function 对 ImmersionBar 的扩展
  * immersionBar 是一个非常优秀的状态栏处理工具，为了更好的配合CloudMVVM,故作此封装便于使用
  */
-interface IBarListener {
+interface IBarExpand {
 
     fun Fragment.updateBar() {
         immersionBar { initBar() }
