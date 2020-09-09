@@ -1,104 +1,122 @@
-# CloudMVVM
-基于JetPack-MVVM的开发框架，不同于大多数复杂化的框架,CloudMVVM 非常克制，没有去按照大多数那样去做一个复杂的框架，对于官方提供的工具，尽可能采用组合的方式，便于更简单的使用 Android-JetPack 开发工具。
+# ☁️CloudAAC
+
+**一个基于AAC的模块化组件库,采用组合的方式提高现代化Android开发体验。**
+
+![image-20200908210016039](https://tva1.sinaimg.cn/large/007S8ZIlly1gijjjan1zmj30o50crt94.jpg)
+
+> ***什么样的框架适合你？什么样的框架也许都不适合你。***
 
 [![](https://jitpack.io/v/Petterpx/CloudMVVM.svg)](https://jitpack.io/#Petterpx/CloudMVVM)
 
+<br/>
+
+## 什么要推荐CloudAAC ?
+
+与大千你我一样，皆是从 **无架构到MVC->模块化->MVP-> MVVM->AAC->组件化AAC。**
+
+**很多时候，我有在考虑，我们真的需要过度去设计吗？可能有人喜欢 BaseVMFragnment<xxViewModel>,但有些时候，我们真的需要ViewModel吗，我们真的只有一个ViewModel吗，我可能真的不想去写<BaseViewModel>，对于2020的今天，带着这些问题，我开始思考，什么样的架构才是我们最合适的，适合于各类人士？，我想不出来，于是将选择主动权交给大家，并将过程中的一些想法通过代码汇聚于此，便于为大家提供思路，这就是CloudAAC，化繁为简，一个简易的组合式框架。**
+
+<br/>
+
 ### 如何使用？
+
+导入依赖
 
 ```groovy
 allprojects {
     repositories {
-   			
         maven { url 'https://jitpack.io' }
     }
 }
 ```
 
-> **为了便于更好的扩展及使用，CloudMVVM 区分了DataBinding 和 直接使用ViewModel实现手动绑定。**
+```groovy
+implementation 'com.github.Petterpx:CloudAAC:core:1.0.3' 
+```
+
+**CloudAAC已经导入了以下组件：**
+
+```
+//一个非常优秀的状态栏处理工具
+implementation 'com.gyf.immersionbar:immersionbar:3.0.0'
+implementation 'com.gyf.immersionbar:immersionbar-ktx:3.0.0'
+
+//Android-ktx扩展相关
+implementation 'androidx.activity:activity:1.1.0'
+implementation 'androidx.fragment:fragment-ktx:1.2.5'
+
+//viewModel数据恢复
+implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0"
+```
+
+<br/>
+
+<br/>
+
+### **扩展支持**
+
+> core模块仅提供了核心的基础类，选择将主动改造权交给了大家，为了更好的便于使用，CloudAAC 支持扩展 以下模块。
 
 ```groovy
-//不包含DataBinding的扩展，即默认的ViewModel实现手动绑定
-implementation 'com.github.Petterpx:CloudMVVM:core:1.0.1' 
+implementation 'com.github.Petterpx:CloudAAC:databing_ktx:1.0.3' 
+implementation 'com.github.Petterpx:CloudAAC:viewbing_ktx:1.0.3' 
+implementation 'com.github.Petterpx:CloudAAC:tab_ktx:1.0.3' 
 ```
 
-```groovy
-//包含DataBinding的扩展
-implementation 'com.github.Petterpx:CloudMVVM:databing_core:1.0.1'
-```
-
-很多开发者可能不习惯使用 **DataBinding**, 那么依赖 **core** 即可。 如果你习惯使用 **DataBinding**，那么直接依赖 **databing_core** 即可，内部已经包含了对于 **DataBinding** 的单独处理。
 
 
+### 核心类解释
 
-<br/>
+#### Core
 
-## 相关核心类的介绍
-
-#### BaseVMActivity && BaseVMFragment
-
-适用于ViewModel 的通用Activity.具体使用详见使用demo.
+- BaseActivity  -------基础BaseActivity类
+- BaseFragment  -----基础BaseFragment类
+- ...其他相关工具
 
 <br/>
 
-#### BaseTabActivity
+#### Databing_ktx
 
-适用于常见的tab页需求，对于一个 **tab** 页，只需要如下代码即可生成。
+> 适用于 **Databinding**  的通用 Activity && Fragment.
+>
+> **注意：** **binding** 变量 请谨慎使用，非必要场景下，**务必禁止使用，避免造成视图不一致的问题。**
 
-```kotlin
-class TestTabActivity : BaseTabActivity() {
-  
-  	//fragments，使用的是FragmentPagerAdapter,所以不必担心传递整个list导致的内存泄漏问题
-    override fun getFragments(): List<Fragment> {
-        return listOf(ItemFragment(), ItemFragment())
-    }
-		
-  	//你的底部布局,默认按照 图片-文字 排版，具体参照demo
-    override fun bottomLayout(): Int {
-        return R.layout.item_bottom_layout
-    }
-
-    override fun getBottomRes(): BottomBean {
-        return BottomBean(
-          	//选中tab图片 && 未选择图片 组
-            mutableListOf(
-                R.mipmap.ic_select to R.mipmap.ic_noselect,
-                R.mipmap.ix_select to R.mipmap.ix_noselect
-            )
-            , mutableListOf("测试1", "测试2"),
-          	//选中颜色 && 非选中颜色
-            Color.RED to Color.WHITE,
-          	//选中字体大小 && 非选中大小
-            30f to 10f,
-          	//底部bottomLayout高度
-            80f
-        )
-    }
-}
-```
+- BaseDataBingActivity<Bing>      ----Activity-DataBing扩展
+- BaseDataBingFragment<Bing>     -----Fragment-DataBing扩展
+- DataBingdinConfig                  ---- DataBing的配置相关 (参考自 KunMinx）
 
 <br/>
 
-#### BasePagerAdapter
+#### ViewBing_ktx
 
-通用的一个PagerAdapter 适用于少量 Fragment,内部配合 **behavior** 已完成懒加载处理。
+> 适用于 **ViewBing**  的通用 Activity && Fragment.
+
+- BaseViewBingActivity<Bing>     ----Activity-ViewBing扩展
+- BaseViewBingFragment<Bing>     ----Fragment-ViewBing扩展
+- BaseViewBingVMActivity<VM,Bing>   ----Activity-ViewBing扩展,包含了默认的viewModel委托使用
+- BaseViewBingVMFragment<VM,Bing>    ----Fragment-ViewBing扩展,包含了默认的viewModel委托使用
 
 <br/>
 
-#### BaseDataBingActivity && BaseDataBingFragment
+#### Tab_ktx (仍在优化中)
 
-适用于 **Databinding**  的通用 Activity && Fragment.
+> 适用于主页 **tab** 的 扩展。
 
-> 注意 **binding** 变量 请谨慎使用，非必要场景下，**务必禁止使用，避免造成视图不一致的问题。**
+- base
+  - BasePagerAdapter      
+  - BaseTabActivity  
+- ...其他相关工具
+
+<br/>
+
+#### ..._ktx_
+
+更多扩展等待加入，CloudAAC 尽可能采用扩展与组合方式，便于不同人群的不同需求，当然如果你有更好的想法，欢迎 PR.
 
 <br/>
 
 <br/>
 
-<br/>
-
-具体使用请参见Demo中的案例,如果在使用中有任何问题，欢迎提 issues,或者联系我的邮箱 ShiyihuiCloud@163.com
-
-
-
+**你知道的越多，你不知道的越多。并不提倡大家去频繁造轮子，但希望大家都能拥有去改造轮子的想法,CloudAAC 代码结构比较清晰，相关注释与边界已经注明，希望会对你会有所帮助，。**
 
 
