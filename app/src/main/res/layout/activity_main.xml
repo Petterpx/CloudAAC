@@ -12,22 +12,18 @@
         android:layout_height="wrap_content"
         android:text="ViewModel-ktx-Activity"
         android:textAllCaps="false"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnBing"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_chainStyle="packed"
         tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/btnBing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:text="DataBing-ktx-Activity"
         android:textAllCaps="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnViewBing"
         app:layout_constraintTop_toBottomOf="@+id/btnVm"
         tools:ignore="MissingConstraints" />
 
@@ -35,24 +31,18 @@
         android:id="@+id/btnViewBing"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textAllCaps="false"
         android:text="ViewBing-ktx-Activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toTopOf="@+id/btnTab"
         app:layout_constraintTop_toBottomOf="@+id/btnBing" />
 
     <Button
         android:id="@+id/btnTab"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:textAllCaps="false"
         android:text="VM-Tab-Activity"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAllCaps="false"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnViewBing" />
 
 

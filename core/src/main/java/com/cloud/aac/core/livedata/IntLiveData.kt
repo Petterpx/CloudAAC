@@ -9,7 +9,7 @@ import androidx.lifecycle.MutableLiveData
  * @Email ShiyihuiCloud@163.com
  * @Function
  */
-class IntMutableLiveData(value: Int = 0) : MutableLiveData<Int>(value) {
+class IntLiveData(value: Int = 0) : MutableLiveData<Int>(value) {
     override fun getValue(): Int {
         return super.getValue()!!
     }

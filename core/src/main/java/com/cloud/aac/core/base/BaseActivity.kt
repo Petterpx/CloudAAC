@@ -16,7 +16,7 @@ import com.cloud.aac.core.expand.IBarExpand
  */
 abstract class BaseActivity : FragmentActivity(), IBarExpand {
 
-    protected val HANDLER by lazy {
+    val mHandler by lazy {
         CloudConfig.HANDLER
     }
 
@@ -29,7 +29,7 @@ abstract class BaseActivity : FragmentActivity(), IBarExpand {
 
 
     /** 获取指定ViewModel */
-    protected inline fun <reified VM : ViewModel> getViewModel(): VM =
+    inline fun <reified VM : ViewModel> getViewModel(): VM =
         ViewModelProvider(this).get(VM::class.java)
 
     fun appViewModelProvider(): ViewModelProvider = getAppViewModelProvider(application)
